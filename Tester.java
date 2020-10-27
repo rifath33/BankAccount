@@ -3,6 +3,7 @@ public class Tester{
 
     BankAccount Rifath = new BankAccount(218964815, "haha");
 
+    System.out.println(Rifath.getBalance());
 
   }
 }

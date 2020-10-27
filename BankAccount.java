@@ -1,8 +1,8 @@
 public class BankAccount{
 
-  private double balance;
-  private int accountID;
-  private String password;
+  private static double balance;
+  private static int accountID;
+  private static String password;
 
 
 //  1. A constructor: Should accept values for accountID and password, the
@@ -12,9 +12,18 @@ public class BankAccount{
     balance = 0;
   }
 
-/*
-  2. get methods for balance, accountID. (just return the value!)
 
+// 2. get methods for balance, accountID. (just return the value!)
+
+  public double getBalance(){
+    return BankAccount.balance;
+  }
+
+  public int getAccountID(){
+    return BankAccount.accountID;
+  }
+
+/*
   3. set method for password
 
   4a. A method to deposit money into the account.
