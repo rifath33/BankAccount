@@ -5,5 +5,13 @@ public class Tester{
 
     System.out.println(Rifath.getBalance());
 
+    System.out.println(Rifath.getAccountID());
+
+    System.out.println(Rifath.getPassword());
+
+    Rifath.setPassword("kutha");
+
+    System.out.println(Rifath.getPassword());
+
   }
 }

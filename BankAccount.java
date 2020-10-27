@@ -9,7 +9,9 @@ public class BankAccount{
 //  balance should be set to 0.
 
   public BankAccount(int accountID, String password){
-    balance = 0;
+    BankAccount.balance = 0;
+    BankAccount.accountID = accountID;
+    BankAccount.password = password;
   }
 
 
@@ -23,9 +25,18 @@ public class BankAccount{
     return BankAccount.accountID;
   }
 
-/*
-  3. set method for password
 
+// 3. set method for password
+
+  public void setPassword(String newPass){
+    BankAccount.password = newPass;
+  }
+
+  public String getPassword(){
+    return BankAccount.password;
+  }
+
+/*
   4a. A method to deposit money into the account.
     public boolean deposit(double amount){...}
     It should accept an amount of money.
