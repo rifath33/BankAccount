@@ -36,17 +36,28 @@ public class BankAccount{
     return BankAccount.password;
   }
 
+
+// 4a. A method to deposit money into the account.
+//   public boolean deposit(double amount){...}
+//   It should accept an amount of money.
+//
+//  When the amount is non-negative increase the account balance by that much,
+//  return true.
+//
+//  When the argument given is a negative you should leave the balance
+//  unchanged and return false.
+
+  public boolean deposit(double amount){
+    if(amount >= 0){
+      BankAccount.balance = BankAccount.balance + amount;
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
 /*
-  4a. A method to deposit money into the account.
-    public boolean deposit(double amount){...}
-    It should accept an amount of money.
-
-   When the amount is non-negative increase the account balance by that much,
-   return true.
-
-   When the argument given is a negative you should leave the balance
-   unchanged and return false.
-
    4b. Method to withdraw money from the account.
    public boolean withdraw(double amount){... }
 
