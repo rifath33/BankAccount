@@ -13,13 +13,12 @@ public class Tester{
 
     System.out.println(Rifath.getPassword());
 
-    // Rifath.deposit(15.90);
-    //
-    // Rifath.withdraw(15.91);
+    Rifath.deposit(1590);
+
+    Rifath.withdraw(15.91);
 
 
-    System.out.println(Rifath.toString);
-
+    System.out.println(Rifath.toString());
 
   }
 }

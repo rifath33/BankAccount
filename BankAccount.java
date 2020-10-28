@@ -80,27 +80,9 @@ public class BankAccount{
    // in the format:   "ID\tBALANCE" e.g. "5213452\t99.423"
 
    public String toString(){
-     return (Integer.toString(accountID) + "\t" +
-     Double.toString(balance));
+     return (
+     Integer.toString(accountID) + "\\t" + Double.toString(balance)
+     );
    }
 
-/*
-
-   6. A main method (in a separate driver file) to test your code.
-*/
-
-
-
 }
-
-/*
-  Since withdraw and deposit return booleans, we can use them as follows:
-  (maybe add the balance so you see the updated value):
-
-  if( var.withdraw(1000) ){
-            println("Withdrawal success!");
-       }else{
-            println("Withdrawal failure");
-       }
-
-*/
