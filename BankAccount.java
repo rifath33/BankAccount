@@ -14,7 +14,6 @@ public class BankAccount{
     password = pass;
   }
 
-
   // 2. get methods for balance, accountID. (just return the value!)
 
   public double getBalance(){
@@ -25,7 +24,6 @@ public class BankAccount{
     return accountID;
   }
 
-
   // 3. set method for password
 
   public void setPassword(String newPass){
@@ -35,7 +33,6 @@ public class BankAccount{
   public String getPassword(){
     return password;
   }
-
 
   // 4a. A method to deposit money into the account.
   //   public boolean deposit(double amount){...}
@@ -49,30 +46,33 @@ public class BankAccount{
 
   public boolean deposit(double amount){
     if(amount >= 0){
-      balance = balance + amount;
-      return true;
+      balance += amount;
+      return (amount >= 0);
     }
     else{
-      return false;
+      return (amount >= 0);
     }
   }
-
 
    // 4b. Method to withdraw money from the account.
    // public boolean withdraw(double amount){... }
 
-   // This will not be successful if the balance is too low,
-   // or the amount is negative. In these cases do not change the balance.
-   //
+   // DISPUTED RULES:
+
    // When the amount is non-negative subtract it from the balance and
    // return true if it was successful,false otherwise.
 
+   // /*Only when amount is positive and the amount does not exceed the balance
+
    public boolean withdraw(double amount){
-     if( (balance >= amount) && (amount >= 0) ){
-       balance = balance - amount;
-       return true;
+     if( (getBalance() >= amount) && (amount>=0) ){
+       double reference = getBalance() - amount;
+       balance = getBalance() - amount;
+       return(balance == reference);
      }
-     else return false;
+     else{
+         return false;
+       }
    }
 
 
@@ -84,6 +84,23 @@ public class BankAccount{
      "#" + accountID + "\t$" + Double.toString(balance)
      );
    }
+
+   // *Part 1*
+   // -Update Your repo from Assignment 12 with the classwork from today.
+   // /*This private method will allow internal methods to check the password easily*/
+   // /**Determine if the password in the object is the same as the parameter.
+   //  *@param password to be checked against the object's password (remember the distinction between this.x and x)
+   //  *@return true if the passwords are the same, false otherwise.
+   //  */
+   // private boolean authenticate(String password)
+   //
+   // /**Transfer money from this BankAccount to the other only when the password matches, and the withdrawal succeeds.
+   //  *@param other which BankAccount to GIVE the money to
+   //  *@param amount how much money to transfer, negative amounts will make this operation fail.
+   //  *@param password to be checked against the source account, incorrect password will make this operation fail.
+   //  *@return true if money is successfully transfered, false otherwise.
+   //  */
+   // public boolean transferTo(BankAccount other, double amount, String password)
 
    /////////////////////////////////////////////////////////////////////////////
    // 2020-10-29
@@ -112,3 +129,15 @@ public class BankAccount{
   }
 
 }
+
+// QUICK REFERENCE:
+
+
+// /*Return a String to be used to display the account data. "ACCOUNT\tBALANCE" */
+//  public String toString(){...}
+//
+//
+// /*Change the value of password to the specified value
+//  *@param newPass The value to replace the old password with*/
+//   public void setPassword(String newPass){...}
+//
