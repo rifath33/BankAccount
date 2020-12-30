@@ -30,10 +30,6 @@ public class BankAccount{
     password = newPass;
   }
 
-  public String getPassword(){
-    return password;
-  }
-
   // 4a. A method to deposit money into the account.
   //   public boolean deposit(double amount){...}
   //   It should accept an amount of money.
@@ -75,32 +71,18 @@ public class BankAccount{
        }
    }
 
-
    // 5. A toString() method that shows us the AccountID and balance
    // in the format:   "ID\tBALANCE" e.g. "5213452\t99.423"
 
+   // /*Return a String to be used to display the account data. "ACCOUNT\tBALANCE" */
+   //  public String toString(){...}
+   //
+
    public String toString(){
      return (
-     "#" + accountID + "\t$" + Double.toString(balance)
+     accountID + "\t" + Double.toString(balance)
      );
    }
-
-   // *Part 1*
-   // -Update Your repo from Assignment 12 with the classwork from today.
-   // /*This private method will allow internal methods to check the password easily*/
-   // /**Determine if the password in the object is the same as the parameter.
-   //  *@param password to be checked against the object's password (remember the distinction between this.x and x)
-   //  *@return true if the passwords are the same, false otherwise.
-   //  */
-   // private boolean authenticate(String password)
-   //
-   // /**Transfer money from this BankAccount to the other only when the password matches, and the withdrawal succeeds.
-   //  *@param other which BankAccount to GIVE the money to
-   //  *@param amount how much money to transfer, negative amounts will make this operation fail.
-   //  *@param password to be checked against the source account, incorrect password will make this operation fail.
-   //  *@return true if money is successfully transfered, false otherwise.
-   //  */
-   // public boolean transferTo(BankAccount other, double amount, String password)
 
    /////////////////////////////////////////////////////////////////////////////
    // 2020-10-29
@@ -129,15 +111,3 @@ public class BankAccount{
   }
 
 }
-
-// QUICK REFERENCE:
-
-
-// /*Return a String to be used to display the account data. "ACCOUNT\tBALANCE" */
-//  public String toString(){...}
-//
-//
-// /*Change the value of password to the specified value
-//  *@param newPass The value to replace the old password with*/
-//   public void setPassword(String newPass){...}
-//
