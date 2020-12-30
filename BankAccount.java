@@ -64,7 +64,7 @@ public class BankAccount{
      if( (getBalance() >= amount) && (amount>=0) ){
        double reference = getBalance() - amount;
        balance = getBalance() - amount;
-       return(balance == reference);
+       return(getBalance() == reference);
      }
      else{
          return false;
@@ -80,7 +80,7 @@ public class BankAccount{
 
    public String toString(){
      return (
-     accountID + "\t" + Double.toString(balance)
+     "#" + getAccountID() + "\t$" + Double.toString(getBalance())
      );
    }
 
@@ -104,7 +104,7 @@ public class BankAccount{
 
   public boolean transferTo(BankAccount other, double amount, String password){
     if((withdraw(amount) == true) && (authenticate(password)==true) && (amount>=0)){
-      other.balance = other.balance + amount;
+      other.balance = other.getBalance() + amount;
       return true;
     }
     else return false;
