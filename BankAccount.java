@@ -93,7 +93,7 @@ public class BankAccount{
   // @return true if the passwords are the same, false otherwise.
 
   private boolean authenticate(String pass){
-    return (password.equals(pass));
+    return (this.password.equals(pass));
   }
 
   // *Transfer money from this BankAccount to the other only when the password matches, and the withdrawal succeeds.
